@@ -9,7 +9,7 @@
       <div class="seccion">
         <div class="seccion-header">
           <h3><i class="fas fa-users"></i> Usuarios</h3>
-          <router-link to="/users" class="btn btn-primary">
+          <router-link to="/usuarios" class="btn btn-primary">
             <i class="fas fa-plus"></i> Nuevo Usuario
           </router-link>
         </div>
@@ -34,12 +34,12 @@
               </thead>
               <tbody>
                 <tr v-for="user in users" :key="user._id">
-                  <td>{{ user.nombre }}</td>
-                  <td>{{ user.apellido }}</td>
-                  <td>{{ user.identificacion }}</td>
+                  <td>{{ user.name }}</td>
+                  <td>{{ user.lastname }}</td>
+                  <td>{{ user.identification }}</td>
                   <td>{{ user.email }}</td>
                   <td>
-                    <span class="badge">{{ user.rol }}</span>
+                    <span class="badge">{{ user.role }}</span>
                   </td>
                 </tr>
               </tbody>

@@ -3,8 +3,10 @@
     <nav class="navbar">
       <div class="container">
         <div class="navbar-brand">
-          <img src="./assets/logo.png" alt="Logo" class="logo" />
-          <h1>Gestor de Usuarios</h1>
+          <div class="logo-container">
+            <img src="@/assets/logo.png" alt="Logo" class="logo" />
+            <h1>Gestor de Usuarios</h1>
+          </div>
         </div>
         <div class="navbar-menu">
           <router-link to="/roles" class="nav-link">
@@ -31,7 +33,23 @@
 </template>
 
 <style>
+/* Importaciones deben ir primero */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+/* Aplicar Montserrat como fuente principal */
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #42b983;
+  --text-color: #2c3e50;
+  --border-radius: 4px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
 
 .app {
   min-height: 100vh;
@@ -54,11 +72,16 @@
 .navbar-brand {
   display: flex;
   align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
 .logo {
-  height: 100px;
+  height: 40px;
   width: auto;
 }
 
@@ -66,6 +89,7 @@
   color: white;
   margin: 0;
   font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .navbar-menu {
@@ -82,6 +106,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-weight: 500;
 }
 
 .nav-link:hover {
@@ -96,5 +121,12 @@
   flex: 1;
   padding: 2rem 0;
   background-color: #f5f6fa;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 </style>

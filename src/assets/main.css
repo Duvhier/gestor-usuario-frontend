@@ -19,8 +19,8 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: 'Monserrat', sans-serif;
+    line-height: 1.5;
     color: var(--text-color);
     background-color: #f5f6fa;
 }
@@ -28,6 +28,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     color: var(--primary-color);
     margin-bottom: 1rem;
+    align-content: center;
 }
 
 .container {

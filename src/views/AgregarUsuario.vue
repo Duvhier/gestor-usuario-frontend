@@ -4,15 +4,15 @@
         <form @submit.prevent="agregarUsuario">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" v-model="usuario.nombre" required>
+                <input type="text" id="nombre" v-model="usuario.name" required>
             </div>
             <div class="form-group">
                 <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" v-model="usuario.apellido" required>
+                <input type="text" id="apellido" v-model="usuario.lastname" required>
             </div>
             <div class="form-group">
                 <label for="identificacion">Identificación:</label>
-                <input type="text" id="identificacion" v-model="usuario.identificacion" required>
+                <input type="text" id="identificacion" v-model="usuario.identification" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo electrónico:</label>
@@ -20,9 +20,9 @@
             </div>
             <div class="form-group">
                 <label for="rol">Rol:</label>
-                <select id="rol" v-model="usuario.rol" required>
+                <select id="rol" v-model="usuario.role" required>
                     <option value="">Seleccione un rol</option>
-                    <option v-for="rol in roles" :key="rol.id" :value="rol.name">
+                    <option v-for="rol in roles" :key="rol._id" :value="rol.name">
                         {{ rol.name }}
                     </option>
                 </select>
@@ -46,11 +46,11 @@ export default {
     data() {
         return {
             usuario: {
-                nombre: '',
-                apellido: '',
-                identificacion: '',
+                name: '',
+                lastname: '',
+                identification: '',
                 email: '',
-                rol: ''
+                role: ''
             },
             roles: [],
             loading: false,
@@ -81,11 +81,11 @@ export default {
             
             try {
                 await axios.post(API_ENDPOINTS.USERS, {
-                    nombre: this.usuario.nombre,
-                    apellido: this.usuario.apellido,
-                    identificacion: this.usuario.identificacion,
+                    name: this.usuario.name,
+                    lastname: this.usuario.lastname,
+                    identification: this.usuario.identification,
                     email: this.usuario.email,
-                    rol: this.usuario.rol
+                    role: this.usuario.role
                 });
 
                 this.mostrarMensaje('Usuario agregado exitosamente', 'exito');
@@ -113,11 +113,11 @@ export default {
         },
         limpiarFormulario() {
             this.usuario = {
-                nombre: '',
-                apellido: '',
-                identificacion: '',
+                name: '',
+                lastname: '',
+                identification: '',
                 email: '',
-                rol: ''
+                role: ''
             };
         }
     }
